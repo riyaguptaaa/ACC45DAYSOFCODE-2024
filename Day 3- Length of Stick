@@ -1,0 +1,19 @@
+def can_obtain_stick(N, X):
+  
+    if X > N:
+        return False
+    
+    if (N % 2) == (X % 2):
+        return True
+    else:
+        return False
+
+if __name__ == "__main__":
+    N = int(input("Enter the length of the stick (N): "))
+    X = int(input("Enter the desired length of the stick (X): "))
+    
+    if can_obtain_stick(N, X):
+        print("Yes, Chef can obtain a stick of length X.")
+    else:
+        print("No, Chef cannot obtain a stick of length X.")
+        
