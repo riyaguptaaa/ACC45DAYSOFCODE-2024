@@ -1,0 +1,10 @@
+T = int(input())
+for _ in range(T):
+    N, X = map(int, input().split())
+    A = list(map(int, input().split()))
+    max_people = X
+    for a in A:
+        X += a
+        max_people = max(max_people, X)
+    print(max_people)
+    
