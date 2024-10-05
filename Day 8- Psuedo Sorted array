@@ -1,0 +1,21 @@
+def is_pseudo_sorted(arr):
+    v = -1
+    for i in range(len(arr) - 1):
+        if arr[i] > arr[i + 1]:
+            if v != -1: return "NO"
+            v = i
+    if v == -1: return "YES"
+    if (v > 0 and arr[v - 1] > arr[v + 1]) or (v + 2 < len(arr) and arr[v] > arr[v + 2]):
+        return "NO"
+    return "YES"
+
+def main():
+    import sys
+    input = sys.stdin.read
+    data = input().splitlines()
+    results = [is_pseudo_sorted(list(map(int, data[i + 1].split()))) for i in range(1, len(data), 2)]
+    print("\n".join(results))
+
+if __name__ == "__main__":
+    main()
+               
