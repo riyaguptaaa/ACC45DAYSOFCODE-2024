@@ -1,0 +1,22 @@
+def classify_gestures(gestures):
+    results = {
+        "Indians": [],
+        "Not Indian": [],
+        "Unknown": []
+    }
+
+    for gesture in gestures:
+        if gesture == 'I':
+            results["Indians"].append(gesture)
+        elif gesture in ['Y', 'N']:
+            results["Unknown"].append(gesture)
+
+    
+    return results
+
+gestures_observed = ['Y', 'I', 'N', 'Y', 'I', 'N', 'Y']
+classification = classify_gestures(gestures_observed)
+
+print("Classified Gestures:")
+print("Indians:", classification["Indians"])
+print("Unknown:", classification["Unknown"])
