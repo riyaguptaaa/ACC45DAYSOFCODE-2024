@@ -1,0 +1,15 @@
+def min_moves_to_same_number(cards):
+    from collections import Counter
+frequency = Counter(cards)
+
+    max_freq = max(frequency.values())
+
+    min_moves = len(cards) - max_freq
+
+    return min_moves
+
+n = int(input("Enter the number of cards: "))
+cards = list(map(int, input("Enter the card values: ").split()))
+
+result = min_moves_to_same_number(cards)
+print("Minimum moves required:", result)
