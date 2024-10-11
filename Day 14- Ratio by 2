@@ -1,0 +1,11 @@
+def min_operations(X, Y):
+    
+    operations_to_make_X_large = max(0, 2 * Y - X)
+    operations_to_make_Y_large = max(0, 2 * X - Y)
+    
+    return min(operations_to_make_X_large, operations_to_make_Y_large)
+
+X = int(input("Enter the value of X: "))
+Y = int(input("Enter the value of Y: "))
+result = min_operations(X, Y)
+print(f"The minimum number of operations needed: {result}")
