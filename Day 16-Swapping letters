@@ -1,0 +1,20 @@
+def encode_message(S):
+    
+    N = len(S)
+    swapped = list(S)  # Convert to list for easier manipulation
+
+    for i in range(0, N - 1, 2):
+        swapped[i], swapped[i + 1] = swapped[i + 1], swapped[i]
+
+    
+    encoded = []
+    for char in swapped:
+        
+        mirrored_char = chr(219 - ord(char))  # 219 = ord('a') + ord('z')
+        encoded.append(mirrored_char)
+
+    return ''.join(encoded)
+
+message = "hello"
+encoded_message = encode_message(message)
+print(encoded_message)  # Output the encoded message
