@@ -1,0 +1,18 @@
+def can_alice_and_bob_have_same_multiset(animals):
+    from collections import Counter
+
+    animal_count = Counter(animals)
+
+    for count in animal_count.values():
+        if count % 2 != 0:
+            return False  
+    
+    return True
+
+if __name__ == "__main__":
+    animals = ['cat', 'dog', 'cat', 'dog', 'bird', 'bird']
+    
+    if can_alice_and_bob_have_same_multiset(animals):
+        print("Alice and Bob can end up with the same multiset of animals.")
+    else:
+        print("Alice and Bob cannot end up with the same multiset of animals.")
