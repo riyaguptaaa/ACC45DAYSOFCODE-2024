@@ -1,0 +1,20 @@
+def candy_game(A, B):
+    limak_candies = 0
+    bob_candies = 0
+    turn = 1  
+
+    while True:
+        if turn % 2 == 1:  
+            if limak_candies + turn > A:
+                return "Bob"  
+            limak_candies += turn
+        else:  
+            if bob_candies + turn > B:
+                return "Limak"  
+            bob_candies += turn
+        
+        turn += 1  
+
+A = 7  
+B = 15  
+print(candy_game(A, B))
