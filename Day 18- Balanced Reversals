@@ -1,0 +1,19 @@
+def lexicographically_smallest_binary_string(binary_string):
+    
+    count_0 = binary_string.count('0')
+    count_1 = binary_string.count('1')
+    
+    
+    if count_0 >= count_1:
+        
+        result = '0' * (count_0 - count_1) + '01' * count_1
+    else:
+        
+        result = '01' * count_0 + '1' * (count_1 - count_0)
+
+    return result
+
+
+input_string = input("Enter a binary string: ")
+result_string = lexicographically_smallest_binary_string(input_string)
+print("Lexicographically smallest string:", result_string)
