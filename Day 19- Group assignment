@@ -1,0 +1,10 @@
+def can_form_groups(preferences):
+    from collections import Counter
+    
+    count = Counter(preferences)
+    
+    for size, num_people in count.items():
+        if num_people % size != 0:
+            return False
+    
+    return True
