@@ -1,0 +1,10 @@
+def min_wins_to_qualify(X, Y):
+    
+    min_wins = max(0, X - Y)
+    return min_wins
+
+X = int(input("Enter the points needed to qualify (X): "))
+Y = int(input("Enter the remaining matches (Y): "))
+
+result = min_wins_to_qualify(X, Y)
+print(f"Minimum number of matches RCB needs to win: {result}")
