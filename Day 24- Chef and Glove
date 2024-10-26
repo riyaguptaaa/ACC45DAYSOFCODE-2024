@@ -1,0 +1,19 @@
+def can_wear_glove(N, fingers, sheaths):
+    front_ok = all(fingers[i] <= sheaths[i] for i in range(N))
+    back_ok = all(fingers[i] <= sheaths[N - i - 1] for i in range(N))
+    
+    if front_ok and back_ok:
+        return "both"
+    elif front_ok:
+        return "front"
+    elif back_ok:
+        return "back"
+    else:
+        return "none"
+                  
+N = int(input())
+fingers = list(map(int, input().split()))
+sheaths = list(map(int, input().split()))
+
+result = can_wear_glove(N, fingers, sheaths)
+print(result)
