@@ -1,0 +1,15 @@
+def calculate_skips(plucked_strings):
+    total_skips = 0
+    
+    plucked_strings.sort()
+    
+    for i in range(1, len(plucked_strings)):
+      
+        skips = plucked_strings[i] - plucked_strings[i - 1] - 1
+        total_skips += skips
+        
+    return total_skips
+
+plucked_strings = [1, 3, 5, 10]  
+skips = calculate_skips(plucked_strings)
+print("Total strings skipped:", skips)
