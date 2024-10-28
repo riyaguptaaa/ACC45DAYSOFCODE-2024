@@ -1,0 +1,17 @@
+def min_cost_jewels(S):
+  
+    jewel_count = {}
+    for jewel in S:
+        if jewel in jewel_count:
+            jewel_count[jewel] += 1
+        else:
+            jewel_count[jewel] = 1
+
+    total_cost = 0
+    for count in jewel_count.values():
+        total_cost += (count + 1) // 2  
+
+    return total_cost
+
+S = "aabbcc"
+print(min_cost_jewels(S)) 
