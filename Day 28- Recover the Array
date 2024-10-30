@@ -1,0 +1,17 @@
+def recover_array(B):
+    N = len(B)
+    
+    S = sum(B) // N
+    
+    A = [0] * N
+    
+    A[0] = (B[0] - S) // 2
+    
+    for i in range(1, N):
+        A[i] = (B[i] - B[i - 1] + S) // 2
+    
+    return A
+
+B = [10, 14, 16, 20] 
+A = recover_array(B)
+print("Recovered array A:", A)
