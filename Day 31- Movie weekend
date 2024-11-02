@@ -1,0 +1,20 @@
+def choose_movie(movies):
+    max_value = -1
+    best_rating = -1
+    best_index = -1
+    
+    for i, (L, R) in enumerate(movies):
+        value = L * R
+        
+        if (value > max_value or 
+            (value == max_value and R > best_rating) or 
+            (value == max_value and R == best_rating and i < best_index)):
+            max_value = value
+            best_rating = R
+            best_index = i
+    
+    return best_index + 1  
+
+n = 5  
+movies = [(3, 5), (4, 6), (2, 8), (5, 4), (5, 6)]
+print(choose_movie(movies)) 
