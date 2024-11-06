@@ -1,0 +1,19 @@
+def recommend_laptop(N, recommendations):
+  
+    counts = [0] * 10 
+    
+    for rec in recommendations:
+        counts[rec - 1] += 1
+    
+    max_recommendations = max(counts)
+    
+    max_count_laptops = counts.count(max_recommendations)
+    
+    if max_count_laptops > 1:
+        return "CONFUSED"
+    else:
+        return str(counts.index(max_recommendations) + 1)
+
+N = 5
+recommendations = [1, 2, 1, 1, 3]
+print(recommend_laptop(N, recommendations))
