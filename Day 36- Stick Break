@@ -1,0 +1,21 @@
+def minimize_difference(L, K):
+    
+    q = L // K  
+    r = L % K   
+   
+    parts = [q + 1] * r + [q] * (K - r)
+    
+    total_difference = 0
+    for i in range(1, K):
+        total_difference += abs(parts[i] - parts[i - 1])
+    
+    
+    return total_difference, parts
+
+L = int(input("Enter the length of the stick (L): "))
+K = int(input("Enter the number of parts (K): "))
+
+min_diff, parts = minimize_difference(L, K)
+
+print("The lengths of the parts are:", parts)
+print("The minimum sum of absolute differences is:", min_diff)
