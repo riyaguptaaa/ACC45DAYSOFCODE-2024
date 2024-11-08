@@ -1,0 +1,19 @@
+# Input:
+# N - number of boxes
+# X - initial position of the coin
+# S - number of swaps
+# swaps - a list of pairs (A, B) representing the swaps
+
+def find_coin_position(N, X, S, swaps):
+  
+    coin_position = X
+
+    
+    for A, B in swaps:
+        if coin_position == A:
+            coin_position = B
+        elif coin_position == B:
+            coin_position = A
+    
+    return coin_position
+    
