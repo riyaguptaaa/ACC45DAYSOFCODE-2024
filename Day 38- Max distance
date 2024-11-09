@@ -1,0 +1,13 @@
+def max_distance(A, N, M):
+    max_distance_sum = 0
+    for i in range(N):
+        # For each A[i], we choose B[i] as far as possible (either 1 or M)
+        if A[i] == M:
+            max_distance_sum += (M - 1)  # Distance between M and 1
+        elif A[i] == 1:
+            max_distance_sum += (M - 1)  # Distance between 1 and M
+        else:
+            max_distance_sum += max(A[i] - 1, M - A[i])  # Max of either (A[i] - 1) or (M - A[i])
+    
+    return max_distance_sum
+    
