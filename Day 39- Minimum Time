@@ -1,0 +1,17 @@
+import math
+
+def min_time_to_kill_all_enemies(health, X):
+    N = len(health)
+
+    multi_target_time = max(health)  # Time is the max health of any enemy
+
+    single_target_time = 0
+    for h in health:
+        single_target_time = max(single_target_time, math.ceil(h / X))
+        
+    return min(multi_target_time, single_target_time)
+
+# Example usage:
+health = [10, 20, 30]
+X = 5
+print(min_time_to_kill_all_enemies(health, X))  # Output: minimum time
