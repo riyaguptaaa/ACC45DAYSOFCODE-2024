@@ -1,0 +1,35 @@
+def can_win_election(N, A, B, X):
+    states_needed = 0
+    flips = []
+    
+    for i in range(N):
+        if A[i] < B[i]:
+            votes_needed = (B[i] - A[i]) + 1
+            flips.append(votes_needed)
+        else:
+            states_needed += 1
+    
+    if states_needed > N // 2:
+        return "YES"
+    
+    flips.sort()
+    
+    for votes in flips:
+        if X >= votes:
+            X -= votes
+            states_needed += 1
+        else:
+            break
+    
+    
+    if states_needed > N // 2:
+        return "YES"
+    else:
+        return "NO"
+
+N = int(input())  # number of states
+A = list(map(int, input().split()))  # votes for A
+B = list(map(int, input().split()))  # votes for B
+X = int(input())  # number of votes Chef can distribute
+
+print(can_win_election(N, A, B, X))
