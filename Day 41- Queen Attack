@@ -1,0 +1,17 @@
+def queen_attack(N, X, Y):
+  
+    horizontal_attack = N - 1
+    
+    vertical_attack = N - 1
+    
+    diagonal_top_left_bottom_right = min(X - 1, Y - 1) + min(N - X, N - Y)
+    
+    diagonal_top_right_bottom_left = min(X - 1, N - Y) + min(N - X, Y - 1)
+    
+    total_attack = horizontal_attack + vertical_attack + diagonal_top_left_bottom_right + diagonal_top_right_bottom_left
+    
+    return total_attack
+
+N, X, Y = map(int, input().split())
+
+print(queen_attack(N, X, Y))
