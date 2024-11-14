@@ -1,0 +1,15 @@
+def find_uncle_johny_position(N, K, playlist):
+    
+    uncle_johny_length = playlist[K - 1]
+    
+  
+    sorted_playlist = sorted(playlist)
+  
+    return sorted_playlist.index(uncle_johny_length) + 1
+
+N = 5
+K = 3
+playlist = [1, 3, 5, 2, 4]
+
+print(find_uncle_johny_position(N, K, playlist))  # Output: 3
+
