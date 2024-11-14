@@ -1,0 +1,13 @@
+def solve():
+    T = int(input())
+    
+    for _ in range(T):
+        N = int(input())
+        
+        odd = (N + 1) // 2  
+        even = N // 2      
+        
+        valid_pairs = 2 * odd * even
+      
+        print(valid_pairs)
+
