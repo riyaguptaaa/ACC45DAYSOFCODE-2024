@@ -1,0 +1,22 @@
+def max_people_in_office(swipes):
+    current_in_office = 0
+    max_in_office = 0
+    swipe_count = {}
+    
+    for swipe in swipes:
+        if swipe not in swipe_count:
+            swipe_count[swipe] = 0
+        swipe_count[swipe] += 1
+      
+        if swipe_count[swipe] % 2 == 1:
+            current_in_office += 1  # Entering the office
+        else:
+            current_in_office -= 1  # Exiting the office
+        
+        max_in_office = max(max_in_office, current_in_office)
+    
+    return max_in_office
+
+# Example usage:
+swipes = [1, 2, 3, 1, 2, 3, 4]
+print(max_people_in_office(swipes))  # Output: 4
