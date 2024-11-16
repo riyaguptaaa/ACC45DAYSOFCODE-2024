@@ -1,0 +1,12 @@
+def encode_message(S):
+    S = list(S)
+    for i in range(0, len(S) - 1, 2):
+        S[i], S[i + 1] = S[i + 1], S[i]
+    
+    for i in range(len(S)):
+        S[i] = chr(219 - ord(S[i]))  # 219 = ord('a') + ord('z')
+    
+    return ''.join(S)
+    
+S = input().strip()
+print(encode_message(S))
