@@ -1,0 +1,13 @@
+import math
+
+def minimum_time_to_kill_all(N, X, health_points):
+    time_single_target = sum(math.ceil(health / X) for health in health_points)
+    
+    time_multi_target = max(health_points)
+    
+    return min(time_single_target, time_multi_target)
+    
+N, X = map(int, input().split())  # N is the number of enemies, X is the damage limit per second
+health_points = list(map(int, input().split()))  # List of health points for each enemy
+
+print(minimum_time_to_kill_all(N, X, health_points))
